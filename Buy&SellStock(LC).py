@@ -14,8 +14,8 @@ each of which looks best at the moment, with the hope that the overall result wi
 def max_profit(prices):
     if not prices:
         return 0
-    min_price=float('inf') #infinity for value tracking
-    max_profit=0
+    min_price = float('inf')  #is initialized to infinity to ensure that any price we encounter will be lower.
+    max_profit = 0 #is initialized to 0 to store the maximum profit found.
     for price in prices:
         if price<min_price:
             min_price=price
