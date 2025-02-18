@@ -7,7 +7,7 @@ if k=2 I have to rotate the array k times"""
 def rotate (nums,k):
     k=k%len(nums)
     for i in range(k):
-        nums.insert(0, nums.pop()) #index is starting from zero pop and put
+        nums.insert(0, nums.pop()) #index is starting from zero pop and put {provide index where to add and add element}
     return nums
 nums=[1,2,3,4,5,6,7]
 k=3
