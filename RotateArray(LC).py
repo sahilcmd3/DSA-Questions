@@ -1,4 +1,4 @@
-#LEETCODE
+#LEETCODE (medium)
 
 """Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 if k=2 I have to rotate the array k times"""
