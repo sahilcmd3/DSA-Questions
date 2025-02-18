@@ -5,6 +5,10 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 different day in the future to sell that stock.
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0"""
 
+"""The solution we previously discussed for finding the maximum profit by buying and selling a stock already 
+uses a greedy algorithm. In a greedy algorithm, we make a series of choices, 
+each of which looks best at the moment, with the hope that the overall result will be optimal."""
+
 
 #Time Complexity: O(n)
 def max_profit(prices):
