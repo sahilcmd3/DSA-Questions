@@ -18,3 +18,13 @@ def max_profit(prices):
 prices = [7, 1, 5, 3, 6, 4]
 ans = max_profit(prices)
 print(ans)
+
+
+#other method using greedy (better)
+"""def maxProfit(self, prices):
+    profit = 0
+
+    for i in range(0, len(prices) - 1):
+        if prices[i] < prices[i + 1]:
+            profit += prices[i + 1] - prices[i]
+    return profit"""
