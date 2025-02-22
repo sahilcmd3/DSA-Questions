@@ -1,0 +1,45 @@
+### Greedy Approach
+
+The greedy algorithm is an approach to solving problems by making a series of choices, each of which looks the
+best at the moment (locally optimal), with the hope that these choices will lead to an overall optimal solution
+(globally optimal). It doesn't always guarantee an optimal solution, but when it does, it often provides a simpler
+and faster solution.
+
+### Key Characteristics of Greedy Algorithms:
+1. Local Optimality: The algorithm makes the best choice at each step.
+2. Global Optimality: The local choices should lead to a globally optimal solution.
+3. Non-reversibility: Once a choice is made, it cannot be undone.
+
+### Common Patterns and Use Cases:
+1. Optimization Problems: Problems where you need to find the maximum or minimum value.
+   - Example: "Coin Change," "Fractional Knapsack."
+
+2. Sorting and Scheduling: Problems that involve ordering or scheduling tasks based on certain criteria.
+   - Example: "Activity Selection," "Job Sequencing."
+
+3. Graph Problems: Certain shortest path or minimum spanning tree problems.
+   - Example: "Dijkstra's Algorithm" for shortest paths, "Prim's Algorithm" for minimum spanning trees.
+
+### Steps to Formulate a Greedy Algorithm:
+1. Determine the Optimal Substructure: Ensure that the problem has an optimal substructure,
+   meaning the optimal solution to the problem contains optimal solutions to subproblems.
+2. Define the Greedy Choice Property: Identify the locally optimal choices that can lead to a globally optimal solution.
+3. Prove the Greedy Choice: Show that making the greedy choice at every step leads to an overall optimal solution.
+4. Design the Algorithm: Implement the algorithm based on the greedy choices.
+
+
+### Recognizing When to Use Greedy Algorithms:
+
+1. Optimal Substructure: The problem can be broken down into smaller problems that can be solved independently
+                         and combined for a solution.
+2. Greedy Choice Property: A locally optimal choice leads to a globally optimal solution.
+3. Sorting: Problems where sorting the input helps to simplify the process of making greedy choices.
+4. Repeated Selection: Problems involving repeated selection or ordering, such as scheduling tasks or selecting items.
+5. Constraints: When the problem constraints make dynamic programming or exhaustive search impractical due to
+                time or space complexity.
+
+### Conclusion
+The greedy approach is a powerful tool for solving optimization problems with certain characteristics.
+By understanding the properties and common patterns of greedy algorithms, you can identify when to apply this
+approach in LeetCode problems. Regular practice and analyzing different problems will help you recognize these
+patterns more quickly and effectively.
