@@ -1,0 +1,71 @@
+A monotonic stack is a data structure designed to maintain its elements in either an increasing or decreasing order
+(hence "monotonic"). It's particularly useful for solving problems involving ranges or intervals, such as finding the
+next greater or smaller elements in an array.
+
+### Monotonic Stack Algorithm
+Here’s a general approach to implementing a monotonic stack:
+
+1. Initialize an Empty Stack:
+   Start with an empty stack to store elements (or their indices).
+
+2. Traverse the Array:
+   Iterate through the elements of the array. For each element:
+
+   - While the stack is not empty and the current element violates the monotonic order with the element
+     at the top of the stack:
+     - Perform necessary computations (e.g., calculate a result or update a value).
+     - Pop the top element from the stack.
+   - Push the current element (or its index) onto the stack.
+
+3. Post-Traversal:
+   After the loop, elements left in the stack might represent unresolved cases depending on the problem.
+
+### Key Points
+- For an increasing monotonic stack, new elements are added only if they're larger than the top element of the stack.
+- For a decreasing monotonic stack, new elements are added only if they're smaller than the top element.
+
+### Example Problem: "Next Greater Element"
+You can use a monotonic decreasing stack to solve this. Here's how:
+1. Traverse the array from left to right.
+2. While the current element is greater than the top element of the stack, pop elements and record the current
+   element as their "next greater".
+3. Push the current element onto the stack.
+
+Monotonic stacks are versatile and frequently used in solving algorithmic problems. Here are some common applications:
+
+### 1. Next Greater/Smaller Element Problems
+   - Problem: Find the next greater or smaller element for each element in an array.
+   - Use: Efficiently solve these problems in \( O(n) \) time.
+   - Example: Stock span problem, where you determine the number of consecutive days with the stock price
+                  less than or equal to the current day's price.
+
+### 2. Histogram Problems
+   - Problem: Find the largest rectangle in a histogram.
+   - Use: A monotonic stack helps calculate the largest area efficiently by keeping track of bars in increasing
+              or decreasing order.
+   - Example: This approach is often used to find the maximum area in a binary matrix.
+
+### 3. Trapping Rain Water
+   - Problem: Calculate how much rainwater can be trapped after a rainfall given the elevation map.
+   - Use: Monotonic stacks can determine the boundaries (left and right) of trapped water efficiently.
+   - Example: The "Trapping Rain Water" problem on coding platforms like LeetCode.
+
+### 4. Sliding Window Maximum/Minimum
+   - Problem: Find the maximum or minimum element in every sliding window of a given size \( k \).
+   - Use: Helps maintain the order while efficiently querying window extremes.
+
+### 5. Merging Intervals
+   - Problem: Merge overlapping intervals to minimize the number of ranges.
+   - Use: Monotonic stacks are often employed for this by sorting intervals and pushing them into the stack based on
+          their boundaries.
+
+### 6. Valid Parentheses
+   - Problem: Check whether a given string of parentheses is valid or not.
+   - Use: Monotonic stacks are used to match opening and closing brackets efficiently.
+
+### 7. Stock Span
+   - Problem: Determine the span of the stock price for each day (how many consecutive days the price was less or equal).
+   - Use: Efficiently solve this using a monotonic stack.
+
+Monotonic stacks are a must-have tool in competitive programming and technical interviews. Would you like a deeper dive
+into any of these applications or see some example code?
