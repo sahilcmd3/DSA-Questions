@@ -19,6 +19,7 @@ The input array words contains at least one word."""
 #Greedy Approach
 #Time Complexity: O(n^2)
 def fullJustify(words, maxWidth):
+
     res = []  # List to store the justified lines
     line = []  # Temporary list to hold words for the current line
     width = 0  # Tracks the total length of words in the current line
