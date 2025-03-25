@@ -13,8 +13,7 @@ string convert(string s, int numRows);"""
 
 #Time Complexity: O(n)
 def convert(s, numRows):
-    if numRows == 1 or numRows >= len(
-            s):  #If numRows is 1 or greater than or equal to the length of the input string s,
+    if numRows == 1 or numRows >= len(s):  #If numRows is 1 or greater than or equal to the length of the input string s,
         # it means that the ZigZag pattern will be the same as the input string. In such cases, just return the input
         # string s as it is
         return s
