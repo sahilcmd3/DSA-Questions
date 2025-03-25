@@ -66,6 +66,3 @@ Monotonic stacks are versatile and frequently used in solving algorithmic proble
 ### 7. Stock Span
    - Problem: Determine the span of the stock price for each day (how many consecutive days the price was less or equal).
    - Use: Efficiently solve this using a monotonic stack.
-
-Monotonic stacks are a must-have tool in competitive programming and technical interviews. Would you like a deeper dive
-into any of these applications or see some example code?
