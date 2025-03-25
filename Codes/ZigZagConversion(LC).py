@@ -20,8 +20,7 @@ def convert(s, numRows):
 
     idx, d = 0, 1  #Initialize idx to keep track of the current row index, starting from 0, and d as the direction
     # of traversal (1 for downward, -1 for upward).
-    rows = [[] for _ in
-            range(numRows)]  #Create a list of numRows empty lists to represent the rows of the ZigZag pattern.
+    rows = [[] for _ in range(numRows)]  #Create a list of numRows empty lists to represent the rows of the ZigZag pattern.
 
     for char in s:
         rows[idx].append(char)
