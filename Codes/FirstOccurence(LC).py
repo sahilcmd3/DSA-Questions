@@ -27,7 +27,7 @@ print(ans)
 
 #KMP Matcher
 #Time complexity: O(m+n)
-def kmp_search(haystack, needle):
+"""def kmp_search(haystack, needle):
     def compute_lps(pattern):
         # Create the "longest prefix suffix" (LPS) array
         lps = [0] * len(pattern)
@@ -74,4 +74,4 @@ def kmp_search(haystack, needle):
 
 
 result = kmp_search(haystack = "hello",needle = "ll")
-print(result)
+print(result)"""
