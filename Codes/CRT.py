@@ -1,7 +1,7 @@
 # CRT PRACTICE QUESTIONS (First Set)
 
 # Add Two Integers
-def Sum(num1,num2):
+"""def Sum(num1,num2):
     add = num1 + num2
     return add
 
@@ -10,7 +10,7 @@ print(ans)
 
 
 # Convert Two Temperatures
-def convert(celsius):
+def convert(Celsius):
     kelvin = celsius + 273.15
     fahrenheit = celsius * 1.80 + 32.00
     return [kelvin, fahrenheit]
@@ -31,18 +31,21 @@ print(ans)
 
 
 # Alternating Digit Sum
-def ads(n):
-    s=str(n)
-    pt=0
 
-    for i in range(0,len(s),2):
-        pt+=int(s[i])
-    for i in range(1,len(s),2):
-        pt-=int(s[i])
+Another approach
+convert int to string
+find length of the string
+find odd, even sum
+a-b/b-a depending on length
 
-    return pt
+def ads(n): #aryan waali approach
+    sum = 0
+    while n:
+        sum = (n % 10) - sum
+        n //= 10
+    return sum
 
-ans=ads(n=521)
+ans = ads(n = 521)
 print(ans)
 
 
@@ -62,13 +65,11 @@ def palindrome(n):
     return True
 
 ans = palindrome(n = 121)
-print(ans)
-
+print(ans)"""
 
 # Prime Number
 # Time Complexity: O(root(n)/6)
-def isprime(n):
-
+"""def isprime(n):
     if n<=1:
         return False
     elif n<=3:
@@ -85,11 +86,10 @@ def isprime(n):
     return True
 
 ans=isprime(n=7)
-print(ans)
-
+print(ans)"""
 
 #Reverse Digits
-def revedigits(n):
+"""def revedigits(n):
     reverse_str = ""
     while n > 0:
         reverse_str += str(n % 10)
@@ -107,7 +107,7 @@ def armsnum(n):
 
     while n != 0: # Loop to process each digit of the number
         digit = n % 10 # Get the last digit of the number
-        res += digit ** 3 # Add the cube of the digit to the result
+        res += digit ** len(n) # Add the cube of the digit to the result
         n //= 10 # Remove the last digit from the number
 
     if res == temp: # Check if the sum of cubes (res) is equal to the original number or not
@@ -116,4 +116,20 @@ def armsnum(n):
         return False
 
 ans=armsnum(n=153)
-print(ans)
+print(ans)"""
+
+
+#armstrong till 10000
+def armstrong(number):
+    digits = [int(d) for d in str(number)]  # Converted num to string to iterate
+    armstrong_sum = sum(d ** len(digits) for d in digits)  # sum of the power equivalent to no of digits in base
+    return armstrong_sum == number
+
+
+arms_numbers = []
+
+for num in range(1, 10000):
+    if armstrong(num):
+        arms_numbers.append(num)
+
+print(arms_numbers)
