@@ -1,4 +1,4 @@
-###Hash Functions
+### Hash Functions
 
 A hash function is a function that converts input data of any size into a fixed-size value,
 typically represented as a sequence of numbers and letters. The output, known as the **hash value** or **hash code**,

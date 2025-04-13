@@ -1,4 +1,4 @@
-#LEETCODE
+#LEETCODE (DUTCH NATIONAL FLAG)
 
 def sortcolors(nums):
     nums.sort()
