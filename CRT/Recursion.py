@@ -72,10 +72,10 @@ int fibonacci(int n) {
 ### Key Differences
 |        Feature           | Plain Recursion |          Composite Recursion         |
 |--------------------------|-----------------|--------------------------------------|
-| Number of Calls per Step |        1        |             More than 1              |
-| Structure                |     Linear      |              Tree-like               |
-| Efficiency               |  Usually better | Can be inefficient (e.g., Fibonacci) |
-| Example                  |    Factorial    |              Fibonacci               |
+| Number of Calls per Step | 1               |             More than 1              |
+| Structure                | Linear          |              Tree-like               |
+| Efficiency               | Usually better  | Can be inefficient (e.g., Fibonacci) |
+| Example                  | Factorial       |              Fibonacci               |
 """
 
 
