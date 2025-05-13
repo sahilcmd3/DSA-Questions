@@ -44,19 +44,25 @@ print(group(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))"""
 
 # Time complexity: O(m∗nlogn)
 from collections import defaultdict
+
+
 # Optimal Approach
 def group(strs):
-    ans= defaultdict(list)  # created with list as the default factory. This means that if 
+    ans = defaultdict(
+        list
+    )  # created with list as the default factory. This means that if
     # a key does not exist in the dictionary, it automatically creates an empty list for that key.
 
     for s in strs:
-        # The string s is sorted alphabetically using the sorted() function. Sorting rearranges the 
+        # The string s is sorted alphabetically using the sorted() function. Sorting rearranges the
         # characters of the string in a defined order (lexicographical order).
         # The sorted characters are then joined back together to form a new string (key).
-        # This sorted string (key) acts as a unique identifier for anagrams. For example, both "eat" 
+        # This sorted string (key) acts as a unique identifier for anagrams. For example, both "eat"
         # and "tea" will produce the key "aet".
         key = "".join(sorted(s))
         ans[key].append(s)
-    
+
     return list(ans.values())
+
+
 print(group(strs=["eat", "tea", "tan", "ate", "nat", "bat"]))
