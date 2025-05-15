@@ -8,7 +8,8 @@ return true if there are two distinct indices i and j in the array such that num
 def near_dup(nums, k):
     visited = {}
 
-    for i, val in enumerate(nums):  # built-in function that adds a counter to an iterable and returns it as an enumerate object.
+    # built-in function that adds a counter to an iterable and returns it as an enumerate object.
+    for i, val in enumerate(nums):
         # This is especially useful when you need both the index and the value while looping through a list, tuple, or other iterable.
         if val in visited and i - visited[val] <= k:
             return True
