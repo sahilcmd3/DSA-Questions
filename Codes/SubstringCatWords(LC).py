@@ -1,4 +1,4 @@
-#LEETCODE (Hard)
+# LEETCODE (Hard)
 
 """You are given a string s and an array of strings words. All the strings of words are of the same length.
 
@@ -19,7 +19,8 @@ Create sliding window and hash map
  - Track Word counts: Use the hashmap to track the counts of words in the current window. If a count of a word exceeds
    its count in the words freq map, it's not a valid window.
  - Check for Valid Concatenation: If the hashmap of the current window matches the frequency map of words, then the
-   current window is a valid-concatenated substring. Add the start index of this window to the result."""
+   current window is a valid-concatenated substring. Add the start index of this window to the result.
+"""
 
 
 # Time Complexity: O(N×K/L+M)
@@ -46,13 +47,13 @@ def subs(s, words):
         temp_word_count = {}
 
         for j in range(i, len(s) - word_length + 1, word_length):
-            word = s[j:j + word_length]
+            word = s[j : j + word_length]
             if word in word_count:
                 temp_word_count[word] = temp_word_count.get(word, 0) + 1
                 count += 1
 
                 while temp_word_count[word] > word_count[word]:
-                    left_word = s[left:left + word_length]
+                    left_word = s[left : left + word_length]
                     temp_word_count[left_word] -= 1
                     left += word_length
                     count -= 1
