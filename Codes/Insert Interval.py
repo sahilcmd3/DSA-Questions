@@ -18,4 +18,6 @@ Output: [[1,5],[6,9]]"""
 
 
 def insert(intervals):
+    for i in range(len(intervals)):
+        continue
     pass
