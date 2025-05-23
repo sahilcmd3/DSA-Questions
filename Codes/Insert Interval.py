@@ -19,22 +19,16 @@ Output: [[1,5],[6,9]]"""
 
 # Time Complexity: O(n log n)
 def insert(intervals, newInterval):
-    intervals.append(
-        newInterval
-    )  # By doing this, we add the new interval into the list to handle it like the other intervals.
+    intervals.append(newInterval)  # By doing this, we add the new interval into the list to handle it like the other intervals.
     intervals.sort()
 
     res = [intervals[0]]
 
     for i in range(1, len(intervals)):
-        if (
-            res[-1][1] >= intervals[i][0]
-        ):  # checks if the last interval in res overlaps with the current interval
+        if (res[-1][1] >= intervals[i][0]):  # checks if the last interval in res overlaps with the current interval
             # (intervals[i]). If the end of the last interval in res (res[-1][1]) is greater than or equal to the
             # start of the current interval (intervals[i][0]), then there is an overlap.
-            res[-1][1] = max(
-                res[-1][1], intervals[i][1]
-            )  # When the intervals overlap, this line merges them by
+            res[-1][1] = max(res[-1][1], intervals[i][1])  # When the intervals overlap, this line merges them by
             # updating the end of the last interval in res to be the maximum of its current end and the end of the
             # current interval. This ensures that res[-1] covers both intervals.
         else:
