@@ -1,4 +1,4 @@
-# LEETCODE 
+# LEETCODE
 
 """You are given positive integers n and m.
 
@@ -17,4 +17,5 @@ def differenceOfSums(n, m):
 
     return total_sum - 2 * divisible_sum
 
-print(differenceOfSums(n = 10, m = 3))
+
+print(differenceOfSums(n=10, m=3))
