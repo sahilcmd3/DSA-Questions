@@ -18,6 +18,12 @@ the next query."""
 
 class Test:
     def dfs(self, node, color, graph, component, bipartite):
+        # Purpose: Performs bipartite coloring of the tree
+        #   bipartite[color] += 1: Counts nodes in each color group
+        #   component[node] = color: Assigns color (0 or 1) to current node
+        #   1 - color: Alternates between colors 0 and 1 for neighbors
+        #   Key insight: In a tree, nodes at even distances get same color, odd distances get different color
+
         bipartite[color] += 1
         component[node] = color
 
@@ -26,6 +32,7 @@ class Test:
                 self.dfs(neighbour, 1 - color, graph, component, bipartite)
 
     def build_graph(self, edges, n):
+        # Purpose: Converts edge list to adjacency list representation
         graph = [[] for _ in range(n)]
 
         for u, v in edges:
@@ -35,6 +42,13 @@ class Test:
         return graph
 
     def maxTargetNodes(self, edges1, edges2):
+        # Algorithm Logic
+        #   Bipartite Coloring: Each tree is colored with alternating colors (0,1). Nodes with same color are at even distances from each other.
+        #   Tree1 Analysis: For each node, count how many nodes in tree1 are at even distances (same color).
+        #   Tree2 Analysis: Find the larger of the two color groups in tree2.
+        #   Optimal Connection: When connecting trees, we can choose any node from tree2's larger group to maximize targets.
+        #   Final Answer: For each node in tree1, the maximum targets = (same-color nodes in tree1) + (larger color group in tree2).
+
         n1, n2 = len(edges1) + 1, len(edges2) + 1
 
         graph1 = self.build_graph(edges1, n1)
