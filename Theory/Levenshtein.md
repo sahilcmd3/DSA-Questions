@@ -1,14 +1,15 @@
 ## What is the Levenshtein Algorithm?
 
-The Levenshtein Algorithm calculates the **minimum number of single-character edits** needed to transform one string 
+The Levenshtein Algorithm calculates the **minimum number of single-character edits** needed to transform one string
 into another. These edits can be:
+
 - **Insertion**: Add a character
 - **Deletion**: Remove a character  
 - **Substitution**: Replace a character
 
 ## Core Concept: Dynamic Programming
 
-The algorithm uses a 2D table (matrix) where each cell `dp[i][j]` represents the minimum edit distance between the first 
+The algorithm uses a 2D table (matrix) where each cell `dp[i][j]` represents the minimum edit distance between the first
 `i` characters of string 1 and the first `j` characters of string 2.
 
 ## Step-by-Step Breakdown
@@ -18,6 +19,7 @@ Let's trace through an example: transforming "**cat**" → "**dog**"
 ### 1. Initialize the DP Table
 
 ```
+
     ""  d  o  g
 ""   0  1  2  3
 c    1  
@@ -33,11 +35,13 @@ t    3
 For each cell `dp[i][j]`, we have two cases:
 
 **Case 1: Characters match** (`s1[i-1] == s2[j-1]`)
+
 ```
 dp[i][j] = dp[i-1][j-1]  // No operation needed
 ```
 
 **Case 2: Characters don't match**
+
 ```
 dp[i][j] = 1 + min(
     dp[i-1][j],    // Deletion: remove char from s1
@@ -67,16 +71,19 @@ Let me trace a few key cells:
 ## Visual Example with Operations
 
 Here's what the transformations look like:
+
 ```
 cat → dat (substitute c with d)
 dat → dot (substitute a with o)  
 dot → dog (substitute t with g)
 ```
+
 Total: 3 operations
 
 ## Why Dynamic Programming Works
 
 The algorithm works because it follows the **principle of optimality**:
+
 - To find the optimal solution for transforming `s1[0...i]` to `s2[0...j]`
 - We only need to consider the optimal solutions for smaller subproblems
 - Each cell builds upon previously computed optimal solutions
@@ -100,5 +107,5 @@ The algorithm works because it follows the **principle of optimality**:
 - **Fuzzy string matching**: Search with typos
 - **Auto-complete features**: Suggest corrections
 
-The beauty of this algorithm is that it guarantees finding the true minimum number of edits needed, making it incredibly useful for any 
+The beauty of this algorithm is that it guarantees finding the true minimum number of edits needed, making it incredibly useful for any
 application requiring string similarity measurement.
