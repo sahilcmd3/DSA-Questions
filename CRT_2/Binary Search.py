@@ -192,12 +192,115 @@ def shipwithinDays(weights, days):
             left = mid + 1
         
     return left
+
+# GFG (Aggressive cow)
+"""You are given an array with unique elements of stalls[], which denote the position of a stall. You are also given an integer k which 
+denotes the number of aggressive cows. Your task is to assign stalls to k cows such that the minimum distance between any two of them is 
+the maximum possible.
+Examples :
+Input: stalls[] = [1, 2, 4, 8, 9], k = 3
+Output: 3
+Explanation: The first cow can be placed at stalls[0], 
+the second cow can be placed at stalls[2] and 
+the third cow can be placed at stalls[3]. 
+The minimum distance between cows, in this case, is 3, which also is the largest among all possible ways."""
+
+def aggressiveCows(stalls, k):
+    def is_possible(stalls, k, mid):
+        cows_placed = 1
+        last_pos = stalls[0]
         
+        for i in range(1, len(stalls)):
+            if stalls[i] - last_pos >= mid:
+                cows_placed += 1
+                last_pos = stalls[i]
+            if cows_placed == k:
+                return True
+        
+        return False
     
+    stalls.sort()
+    low, high = 1, stalls[-1] - stalls[0]
+    result = 0
+
+    while low <= high:
+        mid = (low + high) // 2
+        
+        if is_possible(stalls, k, mid):
+            result = mid
+            low = mid + 1
+        else:
+            high = mid - 1
+            
+    return result
+    
+
+# LEETCODE 410
+"""Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.
+Return the minimized largest sum of the split.
+A subarray is a contiguous part of the array."""
+
+def splitArray(nums, k):
+    def can_split(max_sum_allowed):
+        count = 1
+        current_sum = 0
+        for num in nums:
+            if current_sum + num > max_sum_allowed:
+                count += 1
+                current_sum = num
+            else:
+                current_sum += num
+        return count <= k
+
+    low, high = max(nums), sum(nums)
+    result = high
+
+    while low <= high:
+        mid = (low + high) // 2
+        if can_split(mid):
+            result = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return result
+
+
+
+# LEEETCODE 2226
+"""You are given a 0-indexed integer array candies. Each element in the array denotes a pile of candies of size candies[i]. You can 
+divide each pile into any number of sub piles, but you cannot merge two piles together.
+You are also given an integer k. You should allocate piles of candies to k children such that each child gets the same number of 
+candies. Each child can be allocated candies from only one pile of candies and some piles of candies may go unused.
+Return the maximum number of candies each child can get."""
+
+def maxCandies(candies, k):
+    def can_distribute(mid):
+        count = 0
+        for pile in candies:
+            count += pile // mid
+        return count >= k
+
+    low, high = 1, max(candies)
+    result = 0
+
+    while low <= high:
+        mid = (low + high) // 2
+        if can_distribute(mid):
+            result = mid
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return result
+
 if __name__ == "__main__":
     #print(binSearch(nums=[-1, 0, 3, 5, 9, 12], target=9))
     #print(sip(nums=[1, 3, 5, 6], target=5))
     #print(mysqrt(x=8))
     #print(peakMIA(arr = [0,1,0]))
     #print(koko(piles = [3,6,7,11], h = 8))
-    print(shipwithinDays(weights=[1,2,3,4,5,6,7,8,9,10], days = 5))
+    #print(shipwithinDays(weights=[1,2,3,4,5,6,7,8,9,10], days = 5))
+    #print(aggressiveCows(stalls = [1, 2, 4, 8, 9], k = 3))
+    #print(splitArray(nums = [7,2,5,10,8], k = 2))
+    print(maxCandies(candies = [5,8,6], k = 3))
