@@ -294,6 +294,33 @@ def maxCandies(candies, k):
 
     return result
 
+
+
+# LEETCODE 1283
+"""Given an array of integers nums and an integer threshold, we will choose a positive integer divisor, divide all the array by 
+it, and sum the division's result. Find the smallest divisor such that the result mentioned above is less than or equal to threshold.
+Each result of the division is rounded to the nearest integer greater than or equal to that element. (For example: 7/3 = 3 and 10/2 = 5).
+The test cases are generated so that there will be an answer."""
+
+# Time COmplexity: O(Nlog(Max(Nums)))
+def smallestDivisor(nums, threshold):
+    
+    def compute_sum(divisor):
+        return sum(math.ceil(num / divisor) for num in nums) 
+    
+    left = 1
+    right = max(nums)
+    
+    while left < right:
+        mid = (left + right) // 2
+        if compute_sum(mid) <= threshold:
+            right = mid
+        else:
+            left = mid + 1
+    
+    return left
+
+
 if __name__ == "__main__":
     #print(binSearch(nums=[-1, 0, 3, 5, 9, 12], target=9))
     #print(sip(nums=[1, 3, 5, 6], target=5))
@@ -303,4 +330,5 @@ if __name__ == "__main__":
     #print(shipwithinDays(weights=[1,2,3,4,5,6,7,8,9,10], days = 5))
     #print(aggressiveCows(stalls = [1, 2, 4, 8, 9], k = 3))
     #print(splitArray(nums = [7,2,5,10,8], k = 2))
-    print(maxCandies(candies = [5,8,6], k = 3))
+    #print(maxCandies(candies = [5,8,6], k = 3))
+    print(smallestDivisor(nums = [1,2,5,9], threshold = 6))
