@@ -31,6 +31,7 @@ if __name__ == "__main__":
     print(carPool(trips=[[2, 1, 5], [3, 3, 7]], capacity=4))
 
 
+
 """Difference array ek powerful technique hai jo kisi array me efficient range updates karne ke liye use hoti hai. 
 Yeh prefix sum ka ek variation hai, lekin yeh updates ko **incremental way** me store karta hai.
 
