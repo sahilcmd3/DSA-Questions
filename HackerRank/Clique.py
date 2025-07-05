@@ -67,9 +67,7 @@ def calculate_turan_edges(n, r):
 
     total_possible_edges = nC2(n)
 
-    turan_edges = (
-        total_possible_edges - edges_within_s_partitions - edges_within_rs_partitions
-    )
+    turan_edges = (total_possible_edges - edges_within_s_partitions - edges_within_rs_partitions)
 
     return turan_edges
 
@@ -109,16 +107,12 @@ def solve():
             # We store it and try to see if an even larger clique (mid+1, mid+2, ...)
             # is also guaranteed to exist.
             result_k = mid
-            low = (
-                mid + 1
-            )  # Move to the right half to find a potentially larger forced clique.
+            low = (mid + 1)  # Move to the right half to find a potentially larger forced clique.
         else:
             # A K_mid clique is not necessarily forced. This means it's possible
             # to construct a graph with 'n' vertices, 'm' edges, and no K_mid.
             # Therefore, the guaranteed largest clique size must be smaller than 'mid'.
-            high = (
-                mid - 1
-            )  # Move to the left half to search for a smaller guaranteed clique size.
+            high = (mid - 1)  # Move to the left half to search for a smaller guaranteed clique size.
 
     print(result_k)
 
@@ -149,7 +143,7 @@ Given:
 
 The number of edges in T(n,r) is:
 ```
-t(n,r) = (1 - 1/r) × n²/2
+t(n,r) = (1 - 1/r) * n²/2
 ```
 
 More precisely:
@@ -189,7 +183,7 @@ Turán proved that T(n,r) has the maximum possible number of edges among all K_{
 ### Method 1: Direct Counting
 If we have parts of sizes n₁, n₂, ..., nᵣ, then:
 ```
-Number of edges = Σ(i<j) nᵢ × nⱼ
+Number of edges = Σ(i<j) nᵢ * nⱼ
 ```
 
 ### Method 2: Complement Counting
@@ -234,8 +228,8 @@ Since m=5 < t(4,3)=6, K₄ is not guaranteed.
 
 ### Example 2: n=5, m=7
 - t(5,1) = 0
-- t(5,2) = 6 (divide into {3,2}, edges = 3×2 = 6)
-- t(5,3) = 8 (divide into {2,2,1}, edges = 2×2 + 2×1 + 2×1 = 8)
+- t(5,2) = 6 (divide into {3,2}, edges = 3*2 = 6)
+- t(5,3) = 8 (divide into {2,2,1}, edges = 2*2 + 2*1 + 2*1 = 8)
 
 Since m=7 > t(5,2)=6, must contain K₃.
 Since m=7 < t(5,3)=8, K₄ is not guaranteed.
