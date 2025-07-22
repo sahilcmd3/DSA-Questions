@@ -20,9 +20,9 @@ def climbstairs(n):
 
         dp[n] = one + two
         return dp[n]
-    
+
     dp = [-1] * (n + 1)
-    
+
     return recur(n, dp)
 
 
