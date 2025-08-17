@@ -22,12 +22,18 @@ To get a better understanding of how the base condition is an integral part of r
 
 ```python
 count=0
-def func(){
-    if count==3 return
+
+def func()
+    global count
+
+    if count==3:
+        return
+
     print(count)
-    count++
+    count += 1
+
     func()
-}
+
 print(func)
 ```
 
