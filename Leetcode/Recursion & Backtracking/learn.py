@@ -1,11 +1,11 @@
 # Recursion is when a function calls itself until a specified condition is met
 
-"""
+# without base case
 def fun():
     count = 0
     print(count)
     fun()  # This is will continue endlessly 
-"""
+
 
 count = 0
 
@@ -63,8 +63,12 @@ def revlinear(i, n):
     if i < n:
         return
     
-
+# Write a recursive function that given an input n sums all the non negative integers
+def sums(n):
+    if n <= 0:
+        return 0
     
+    return n + sums(n - 1)
 
 
 if __name__ == "__main__":
@@ -72,4 +76,5 @@ if __name__ == "__main__":
     # name()
     # linear()
     # rev_linear()
-    ntimes(i = 0, n = 6)
+    # ntimes(i = 0, n = 6)
+    print(sums(n=5))
