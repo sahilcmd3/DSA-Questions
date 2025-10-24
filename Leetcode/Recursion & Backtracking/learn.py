@@ -59,10 +59,15 @@ def linear():
 
 
 # Print from N to 1
-def revlinear(i, n):
-    if i < n:
+def revlinear(i):
+    if i < 1:
         return
     
+    print(i)
+    i -= 1
+    revlinear(i)
+
+
 # Write a recursive function that given an input n sums all the non negative integers
 def sums(n):
     if n <= 0:
@@ -77,4 +82,5 @@ if __name__ == "__main__":
     # linear()
     # rev_linear()
     # ntimes(i = 0, n = 6)
-    print(sums(n=5))
+    # print(sums(n=5))
+    revlinear(i = 10)
