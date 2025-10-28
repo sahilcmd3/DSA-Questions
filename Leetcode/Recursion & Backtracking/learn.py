@@ -102,7 +102,7 @@ def palindrome(s):
     # Recursive Case {s[-1]: prints the last char "r" and so on like s[-2] prints "a"}
     if s[0] == s[-1]:
         return palindrome(
-            s[1:-1]  # # They matched then remove the first and last element {s[1:-1]: prints aceca}
+            s[1:-1]  # They matched then remove the first and last element {s[1:-1]: prints aceca}
         )
 
     return False
