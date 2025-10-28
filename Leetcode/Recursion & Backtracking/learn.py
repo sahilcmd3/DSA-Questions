@@ -62,7 +62,7 @@ print(
 
 
 # Example
-def call():
+def call() -> None:
     print("call")
 
     # Calling itself
