@@ -50,7 +50,7 @@ class Solution:
 
 if __name__ == "__main__":
     obj = Solution()
-    print(obj.myPow(x=2.00000, n=-2))
+    print(obj.myPow(x=2.00000, n=-5))
 
 
 # Tracing myPow(2, 10)
