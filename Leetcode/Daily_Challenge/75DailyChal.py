@@ -15,20 +15,20 @@ You must solve this problem without using the library's sort function."""
 
 
 # Time Complexity: O(nums)
-def sortColor(nums):
+def sortColor(nums: list[int]) -> list[int]:
     red, white, blue = 0, 1, 2
-    l, m, r = 0, 0, len(nums) - 1
+    left, m, right = 0, 0, len(nums) - 1
 
-    while m <= r:
+    while m <= right:
         if nums[m] == red:
-            nums[l], nums[m] = nums[m], nums[l]
-            l += 1
+            nums[left], nums[m] = nums[m], nums[left]
+            left += 1
             m += 1
         elif nums[m] == white:
             m += 1
         else:
-            nums[m], nums[r] = nums[r], nums[m]
-            r -= 1
+            nums[m], nums[right] = nums[right], nums[m]
+            right -= 1
 
     return nums
 
